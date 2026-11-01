@@ -6,7 +6,6 @@
 [ext_resource type="FontFile" uid="uid://bciephe0so61g" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="5_urukh"]
 [ext_resource type="FontFile" uid="uid://r26svt2adh5l" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="6_0fhlg"]
 [ext_resource type="Script" uid="uid://dmw4vx1jf0pu5" path="res://scripts/start_button.gd" id="7_i23jl"]
-[ext_resource type="Script" uid="uid://cxpf66ctlrqam" path="res://scripts/alllevellead.gd" id="8_vkr8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e48qc"]
 texture = ExtResource("2_e0on4")
@@ -325,9 +324,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -97.0
+offset_left = -87.0
 offset_top = -76.0
-offset_right = 97.0
+offset_right = 86.0
 offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -360,21 +359,3 @@ action_mode = 0
 text = "Back"
 script = ExtResource("7_i23jl")
 target_scene = "uid://ckjmf46t5tvjd"
-
-[node name="level select text2" type="Label" parent="." unique_id=1264104211]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -99.0
-offset_top = -3.0
-offset_right = 95.0
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_urukh")
-theme_override_font_sizes/font_size = 26
-script = ExtResource("8_vkr8l")

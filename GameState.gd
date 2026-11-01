@@ -19,11 +19,11 @@ const SLOW_MULTIPLIER := 4.0          #time bonus reaches 0 at par * this
 #time where u get max points
 const DEFAULT_PAR_TIME := 30.0
 const PAR_TIMES := {
-	"level_1": 7.0,
-	"level_2": 25.0,
-	"level_3": 25.0,
-	"level_4": 8.0,
-	"level_5": 30.0,
+	"level_1": 8.0,
+	"level_2": 23.0,
+	"level_3": 20.0,
+	"level_4": 15.0,
+	"level_5": 25.0,
 }
 
 var points: int = 0

@@ -1,8 +1,8 @@
 extends Label
 
 @export_multiline var text_format: String = "Best time: {best}\nBest score: {best_points}\nAttempts: {attempts}"
-@export var font_size: int = 12          #make this smaller to shrink the text, bigger to grow it
-@export var line_gap: int = 1.0       # xtra space between lines in px (0 = tight)
+@export var font_size: int = 12        #make this smaller to shrink the text, bigger to grow it
+@export var line_gap: int = 2       # xtra space between lines in px (0 = tight)
 
 #other values i can use in text format:
 #{time} this run's time      {total} total time over all attempts    {points} this run's score

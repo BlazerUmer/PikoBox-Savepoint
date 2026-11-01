@@ -6,12 +6,30 @@ signal closed
 const CONTROLS_TEXT:="""CONTROLS:
 
 A/D or arrow keys - move
-SPACE - jump
+SPACE/W - jump
 1 - Size down
 2 - Default size (can spawn boxes)
 3 - Size up
 E - Place box (disabled in level 1)
 ESC - Pause menu
+
+Points System:
+
+1- The faster you complete a level and the less attempts and the 
+ more stars you take the more points/score you get.
+
+2- Max possible score for a level is 300.
+
+3- The stars have 100 points per level.(50 each for level 3. 100 total)
+
+4- Attempts total score is 100. You get 100 only if 1 attempt is used.
+
+5- Time score is 100 max.The faster you are the more points you 
+ get with max being 100.
+
+6- You can view your best time in best times tab.
+
+7- Leaderboards tab shows everyones best score.
 
 TIPS:
 
@@ -30,6 +48,7 @@ TIPS:
  blocking your path.
 
 5- Be mindful of box and resize limits!
+
  Use boxes and Resizing to reach the end!!
 
        Goodluck!!!"""

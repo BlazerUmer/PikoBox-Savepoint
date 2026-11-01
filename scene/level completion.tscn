@@ -360,10 +360,7 @@ horizontal_alignment = 1
 script = ExtResource("5_am605")
 text_format = "Time: {time} 
 Score: {points}
-Best time: {best}
-Best score: {best_points}
 Attempts: {attempts}"
-font_size = 14
 
 [node name="level select button2" type="Button" parent="." unique_id=915400290]
 layout_mode = 1

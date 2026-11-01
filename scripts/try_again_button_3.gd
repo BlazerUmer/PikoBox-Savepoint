@@ -12,5 +12,4 @@ func _on_pressed() -> void:
 
 	#unpause and unfreeze
 	get_tree().paused = false
-
 	stats.retry()
