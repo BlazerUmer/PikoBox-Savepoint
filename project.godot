@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Progress="*uid://c81nrvca7pl6e"
 GameStats="*uid://cup1pfntttc76"
 Music="*uid://nwkaasadq7o5"
+GameState="*uid://k53qlvset33n"
 
 [display]
 

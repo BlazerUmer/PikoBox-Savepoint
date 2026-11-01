@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cnk0rxnlvbpuv"]
+
+[ext_resource type="Texture2D" uid="uid://dk8ql0u54pxmp" path="res://jame gam/star.png" id="1_xmg6v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ql73s"]
+radius = 11.0
+
+[node name="Collectible" type="Area2D" unique_id=939729164]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2142191685]
+texture = ExtResource("1_xmg6v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247545748]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_ql73s")
