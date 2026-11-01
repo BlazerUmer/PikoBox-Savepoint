@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctxncgmb4mdhi"]
 
-[ext_resource type="Script" uid="uid://dm8njyi7si48w" path="res://scene/level_1.gd" id="1_h1kvh"]
+[ext_resource type="Script" uid="uid://dm8njyi7si48w" path="res://scripts/level_1.gd" id="1_h1kvh"]
 [ext_resource type="Texture2D" uid="uid://bp8ojn5q5qblj" path="res://jame gam/palette_tiles_32px.png" id="2_tm58d"]
 [ext_resource type="Texture2D" uid="uid://dq2mcby3xngkm" path="res://jame gam/palette_tiles_16px.png" id="3_1fsdj"]
 [ext_resource type="Texture2D" uid="uid://b6l0m6b8ycg1v" path="res://jame gam/palette_tiles_8px.png" id="4_sgqh3"]

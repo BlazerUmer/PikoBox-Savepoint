@@ -2,19 +2,16 @@ extends CanvasLayer
 
 const LEVEL_SELECT := "res://scene/Levelselection.tscn"
 const MAIN_MENU := "res://scene/main screen.tscn"
-
 @onready var menu_box: Control = $CenterContainer
 @onready var buttons: VBoxContainer = $CenterContainer/VBoxContainer
 @onready var resume_btn: Button = $"CenterContainer/VBoxContainer/resume button"
 @onready var select_btn: Button = $"CenterContainer/VBoxContainer/level select button2"
 @onready var menu_btn: Button = $"CenterContainer/VBoxContainer/main menu button3"
-
 var controls_screen: ControlsScreen
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	hide()
-
 	resume_btn.pressed.connect(resume)
 	select_btn.pressed.connect(_go.bind(LEVEL_SELECT))
 	menu_btn.pressed.connect(_go.bind(MAIN_MENU))
@@ -47,10 +44,8 @@ func _build_controls_screen() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		var tree := get_tree()
-
 		if tree == null:
 			return
-
 		if tree.paused:
 			if controls_screen.visible:
 				controls_screen.close()      #esc closes the controls screen first
@@ -58,7 +53,6 @@ func _unhandled_input(event: InputEvent) -> void:
 				resume()
 		else:
 			pause()
-
 		get_viewport().set_input_as_handled()
 
 func show_controls() -> void:
@@ -84,7 +78,6 @@ func resume() -> void:
 	tree.paused = false
 	hide_controls()
 	hide()
-
 
 func _retry() -> void:
 	var tree := get_tree()

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b6l0m6b8ycg1v" path="res://jame gam/palette_tiles_8px.png" id="3_luclc"]
 [ext_resource type="FontFile" uid="uid://bciephe0so61g" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="4_wlql2"]
 [ext_resource type="FontFile" uid="uid://r26svt2adh5l" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="5_olij2"]
-[ext_resource type="Script" uid="uid://b5br0u1qnm5ex" path="res://scene/try_again_button_3.gd" id="6_0ww5j"]
+[ext_resource type="Script" uid="uid://b5br0u1qnm5ex" path="res://scripts/try_again_button_3.gd" id="6_0ww5j"]
 [ext_resource type="Script" uid="uid://dmw4vx1jf0pu5" path="res://scripts/start_button.gd" id="6_s23hh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwm4k"]

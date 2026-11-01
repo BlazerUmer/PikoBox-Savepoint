@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c822p2wronl4y"
-path="res://.godot/imported/main charac.png-5c65257fa46966624c88f172dacb9ba8.ctex"
+uid="uid://dk8ql0u54pxmp"
+path="res://.godot/imported/star.png-034c3781cc7d0df78df451684e33e019.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main charac.png"
-dest_files=["res://.godot/imported/main charac.png-5c65257fa46966624c88f172dacb9ba8.ctex"]
+source_file="res://jame gam/star.png"
+dest_files=["res://.godot/imported/star.png-034c3781cc7d0df78df451684e33e019.ctex"]
 
 [params]
 

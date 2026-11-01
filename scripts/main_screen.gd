@@ -3,4 +3,4 @@ extends Control
 func _ready() -> void:
 	get_tree().paused = false
 #game was breaking without this
-#no idea why lol
+#unpauses main screen

@@ -7,9 +7,9 @@
 [ext_resource type="FontFile" uid="uid://bciephe0so61g" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="5_8t7pu"]
 [ext_resource type="FontFile" uid="uid://r26svt2adh5l" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="6_k6vq2"]
 [ext_resource type="Script" uid="uid://dmw4vx1jf0pu5" path="res://scripts/start_button.gd" id="7_8t7pu"]
-[ext_resource type="Script" uid="uid://dsunbfxr1lke6" path="res://scene/controls_button.gd" id="8_8t7pu"]
+[ext_resource type="Script" uid="uid://dsunbfxr1lke6" path="res://scripts/controls_button.gd" id="8_8t7pu"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8i6m7"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e48qc"]
 texture = ExtResource("1_8i6m7")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -176,9 +176,9 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_k6vq2"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_8i6m7")
+sources/0 = SubResource("TileSetAtlasSource_e48qc")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8t7pu"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cifwr"]
 texture = ExtResource("2_7pnt3")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -223,9 +223,9 @@ texture = ExtResource("2_7pnt3")
 
 [sub_resource type="TileSet" id="TileSet_54t5h"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_8t7pu")
+sources/0 = SubResource("TileSetAtlasSource_cifwr")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2kq6j"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vei8"]
 texture = ExtResource("3_1prsh")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
@@ -272,7 +272,7 @@ texture_region_size = Vector2i(8, 8)
 [sub_resource type="TileSet" id="TileSet_sexo0"]
 tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_2kq6j")
+sources/0 = SubResource("TileSetAtlasSource_1vei8")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6vq2"]
 bg_color = Color(0.7781049, 0.5257843, 0.49079627, 1)

@@ -7,7 +7,6 @@ func _ready() -> void:
 	if stats == null:
 		text = "(GameStats autoload is missing)"
 		return
-
 	text = text_format.format({
 		"attempts": stats.done_attempts,
 		"time": stats.format_time(stats.done_time),

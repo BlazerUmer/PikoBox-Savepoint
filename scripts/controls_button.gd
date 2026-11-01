@@ -1,11 +1,8 @@
 extends Button
 #attaching this to control button in main menu.
-
 var screen: ControlsScreen
-
 func _ready() -> void:
 	pressed.connect(_on_pressed)
-	
 func _on_pressed() -> void:
 	if screen==null:
 		screen=ControlsScreen.new()

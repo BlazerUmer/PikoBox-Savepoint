@@ -7,6 +7,7 @@
 size = Vector2(34.75, 30.875)
 
 [node name="box" type="RigidBody2D" unique_id=1942206849]
+mass = 1.5
 script = ExtResource("1_3tsfx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1471057582]

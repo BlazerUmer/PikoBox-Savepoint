@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://bda00op3la86t"]
 
-[ext_resource type="Script" uid="uid://dm8njyi7si48w" path="res://scene/level_1.gd" id="1_uj4fy"]
+[ext_resource type="Script" uid="uid://dm8njyi7si48w" path="res://scripts/level_1.gd" id="1_uj4fy"]
 [ext_resource type="Texture2D" uid="uid://bp8ojn5q5qblj" path="res://jame gam/palette_tiles_32px.png" id="2_irr0h"]
 [ext_resource type="Texture2D" uid="uid://dq2mcby3xngkm" path="res://jame gam/palette_tiles_16px.png" id="3_empab"]
 [ext_resource type="Texture2D" uid="uid://b6l0m6b8ycg1v" path="res://jame gam/palette_tiles_8px.png" id="4_2g5w6"]
 [ext_resource type="Texture2D" uid="uid://b1gicd5braou8" path="res://jame gam/flag_spritesheet.png" id="5_wm7jf"]
 [ext_resource type="Script" uid="uid://bsn74ejlam2e5" path="res://scripts/area_2d.gd" id="6_5xwtq"]
-[ext_resource type="Texture2D" uid="uid://ukli3hpjepqm" path="res://jame gam/lever_spritesheet.png" id="7_h1mxe"]
 [ext_resource type="Script" uid="uid://bk7qme1smahph" path="res://scene/fall_death.gd" id="8_im542"]
 [ext_resource type="FontFile" uid="uid://r26svt2adh5l" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="9_j5xbh"]
 [ext_resource type="PackedScene" uid="uid://yfn2b25bmkdo" path="res://scene/pause menu.tscn" id="11_xgnfs"]
@@ -280,17 +279,6 @@ sources/0 = SubResource("TileSetAtlasSource_wa4jx")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ql73s"]
 size = Vector2(62, 65.75)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7gv5k"]
-texture = ExtResource("7_h1mxe")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0.60936165, -8, -0.08705139, -1.6539803, 8, 5.1360455, 8, 8, -8, 8, -2.524496, 2.524498, -8, -1.3057747)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.08705139, -8, 8, -8, 8, -2.3503933, 4.9619427, 1.4798775, 4.78784, 3.917324, 5.8324585, 6.180666, 8, 8, -8, 8, -4.9619427, 3.3950138, -0.43525887, -0.60936165)
-
-[sub_resource type="TileSet" id="TileSet_ycj30"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_7gv5k")
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ql73s"]
 normal = Vector2(0.009173926, -0.9999579)
 distance = -505.01544
@@ -337,12 +325,6 @@ completion_scene_path = "uid://dl3xb4f4xedfn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="flag" unique_id=1510207395]
 position = Vector2(104, 126)
 shape = SubResource("RectangleShape2D_ql73s")
-
-[node name="tile lever" type="TileMap" parent="." unique_id=98982514]
-position = Vector2(-323, 78)
-tile_set = SubResource("TileSet_ycj30")
-format = 2
-layer_0/tile_data = PackedInt32Array(589830, 0, 0, 589831, 65536, 0)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=449434247]
 position = Vector2(804.00006, 369)

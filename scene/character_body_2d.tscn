@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dv50ue4of773j"]
 
 [ext_resource type="Script" uid="uid://b00g0a45k1hx2" path="res://scripts/script.gd" id="1_qug0s"]
-[ext_resource type="Texture2D" uid="uid://dq7edbhj02s1u" path="res://jame gam/main charac.png" id="2_qug0s"]
+[ext_resource type="Texture2D" uid="uid://b377v54d8283n" path="res://jame gam/New Piskel (2).png" id="2_qug0s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qug0s"]
 radius = 4.0

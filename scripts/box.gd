@@ -2,13 +2,10 @@ extends PhysicsBody2D
 
 @export var box_size_px: int = 16
 
-
 func _ready() -> void:
 	add_to_group("boxes")
 	scale = Vector2.ONE                          #never scale the body itself
-
 	var size := float(box_size_px)
-
 	var shape_node := get_node_or_null("CollisionShape2D") as CollisionShape2D
 	if shape_node:
 		var rect := RectangleShape2D.new()       #new shape per box so boxes don't share one
@@ -18,7 +15,6 @@ func _ready() -> void:
 		shape_node.position = Vector2.ZERO       #hitbox centered on the box's origin
 	else:
 		push_warning("box needs a child node named CollisionShape2D")
-
 	var sprite := get_node_or_null("Sprite2D") as Sprite2D
 	if sprite and sprite.texture:
 		sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
@@ -29,7 +25,6 @@ func _ready() -> void:
 		var art_size := sprite.get_rect().size
 		if art_size.x > 0.0 and art_size.y > 0.0:
 			sprite.scale = Vector2(size, size) / art_size
-
 	var me: Node = self
 	if me is RigidBody2D:
 		var body := me as RigidBody2D

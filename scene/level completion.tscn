@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dq2mcby3xngkm" path="res://jame gam/palette_tiles_16px.png" id="2_am605"]
 [ext_resource type="Texture2D" uid="uid://b6l0m6b8ycg1v" path="res://jame gam/palette_tiles_8px.png" id="3_vd3bj"]
 [ext_resource type="FontFile" uid="uid://bciephe0so61g" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="4_084gv"]
-[ext_resource type="Script" uid="uid://bj4n3aj3po3p2" path="res://scene/beat_level.gd" id="5_am605"]
+[ext_resource type="Script" uid="uid://bj4n3aj3po3p2" path="res://scripts/beat_level.gd" id="5_am605"]
 [ext_resource type="FontFile" uid="uid://r26svt2adh5l" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="5_sybmk"]
 [ext_resource type="Script" uid="uid://dmw4vx1jf0pu5" path="res://scripts/start_button.gd" id="6_sclsb"]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://knaw2vxk83xl" path="res://scripts/pause_menu.gd" id="1_7l61g"]
 [ext_resource type="FontFile" uid="uid://bciephe0so61g" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_5jxrj"]
 [ext_resource type="FontFile" uid="uid://r26svt2adh5l" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_fxs3t"]
-[ext_resource type="Script" uid="uid://b5br0u1qnm5ex" path="res://scene/try_again_button_3.gd" id="4_4iwa0"]
+[ext_resource type="Script" uid="uid://b5br0u1qnm5ex" path="res://scripts/try_again_button_3.gd" id="4_4iwa0"]
 [ext_resource type="Script" uid="uid://dmw4vx1jf0pu5" path="res://scripts/start_button.gd" id="4_ioks8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpo37"]

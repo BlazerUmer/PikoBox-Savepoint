@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8485bbt38cve"]
 
-[ext_resource type="Script" uid="uid://dm8njyi7si48w" path="res://scene/level_1.gd" id="1_a2j0k"]
+[ext_resource type="Script" uid="uid://dm8njyi7si48w" path="res://scripts/level_1.gd" id="1_a2j0k"]
 [ext_resource type="Texture2D" uid="uid://bp8ojn5q5qblj" path="res://jame gam/palette_tiles_32px.png" id="1_lsoxn"]
 [ext_resource type="PackedScene" uid="uid://dv50ue4of773j" path="res://scene/character_body_2d.tscn" id="2_x17xt"]
 [ext_resource type="Texture2D" uid="uid://dq2mcby3xngkm" path="res://jame gam/palette_tiles_16px.png" id="4_ri5j0"]
@@ -321,6 +321,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(262148, 0, 0)
 
 [node name="flag" type="Area2D" parent="." unique_id=531616528]
+visible = false
 position = Vector2(851, 36)
 script = ExtResource("8_x17xt")
 completion_scene_path = "uid://dl3xb4f4xedfn"
@@ -393,59 +394,14 @@ death_scene_path = "uid://cvpol1onn1qc8"
 position = Vector2(508, -5)
 shape = SubResource("WorldBoundaryShape2D_ql73s")
 
-[node name="tutorial text3" type="Label" parent="." unique_id=990147683]
-offset_left = -199.0
-offset_top = 122.0
-offset_right = -21.0
-offset_bottom = 165.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_tlh70")
-theme_override_font_sizes/font_size = 16
-text = "Use A D or arrow
- keys to move."
-
-[node name="tutorial text4" type="Label" parent="." unique_id=1798285469]
-offset_left = -246.0
-offset_top = 35.0
-offset_right = -57.0
-offset_bottom = 101.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_tlh70")
-theme_override_font_sizes/font_size = 16
-text = "Press 1 to size down.
-Press 2 for default size.
-press 3 for size up."
-metadata/_edit_use_anchors_ = true
-
-[node name="tutorial text5" type="Label" parent="." unique_id=710140777]
-offset_left = -115.0
-offset_top = 372.0
-offset_right = -26.0
-offset_bottom = 389.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_tlh70")
-theme_override_font_sizes/font_size = 14
-text = "Size Up"
-metadata/_edit_use_anchors_ = true
-
-[node name="pause menu text2" type="Label" parent="." unique_id=871169968]
-offset_left = 217.0
-offset_top = -116.0
-offset_right = 497.0
-offset_bottom = -73.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("12_tlh70")
-text = "Black glow means there isnt enough 
-space for the character to resize."
-
 [node name="tutorial text6" type="Label" parent="." unique_id=775817475]
-offset_left = 34.0
-offset_top = 357.0
-offset_right = 366.0
-offset_bottom = 469.0
+offset_left = 39.0
+offset_top = 40.0
+offset_right = 371.0
+offset_bottom = 152.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("12_tlh70")
 theme_override_font_sizes/font_size = 18
 text = "Controls are in
- pause menu.
+pause menu.
 "

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cfivtjgjnxfvg"]
 
-[ext_resource type="Script" uid="uid://dm8njyi7si48w" path="res://scene/level_1.gd" id="1_315ab"]
+[ext_resource type="Script" uid="uid://dm8njyi7si48w" path="res://scripts/level_1.gd" id="1_315ab"]
 [ext_resource type="Texture2D" uid="uid://bp8ojn5q5qblj" path="res://jame gam/palette_tiles_32px.png" id="2_3qlkq"]
 [ext_resource type="Texture2D" uid="uid://dq2mcby3xngkm" path="res://jame gam/palette_tiles_16px.png" id="3_hqf2v"]
 [ext_resource type="Texture2D" uid="uid://b6l0m6b8ycg1v" path="res://jame gam/palette_tiles_8px.png" id="4_h2wq0"]
@@ -375,8 +375,8 @@ hud_margin = Vector2(10, 3)
 [node name="tutorial text" type="Label" parent="." unique_id=831102170]
 offset_left = 649.0
 offset_top = 591.0
-offset_right = 981.0
-offset_bottom = 703.0
+offset_right = 897.0
+offset_bottom = 672.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_lpblo")
 theme_override_font_sizes/font_size = 20

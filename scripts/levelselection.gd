@@ -34,7 +34,6 @@ func _ready() -> void:
 		b.add_theme_font_size_override("font_size", 8)
 		for c in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color"]:
 			b.add_theme_color_override(c, TEXT_COLOR)
-
 		if i <= Progress.unlocked_levels:
 			b.text = str(i)
 			b.pressed.connect(_on_level_pressed.bind(i))

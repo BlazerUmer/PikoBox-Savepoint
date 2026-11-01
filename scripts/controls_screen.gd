@@ -1,10 +1,8 @@
 class_name ControlsScreen
 extends CanvasLayer
-# Full-screen, scrollable controls + tips screen.
-# Used by the pause menu and by the main menu's controls button.
+#fullscreen control scene with scrollbar
 
 signal closed
-
 const CONTROLS_TEXT:="""CONTROLS:
 
 A/D or arrow keys - move
@@ -37,19 +35,14 @@ TIPS:
        Goodluck!!!"""
 
 const SCROLL_STEP := 24
-
 var font_size: int = 8
-var close_on_escape: bool = true     # pause menu turns this off because it handles Esc itself
-
+var close_on_escape: bool = true     #pause menu turns this off because it handles Esc itself
 var _scroll: ScrollContainer
 var _back: Button
-
-
-# font: font for the text (optional). button_template: a button to copy the look from (optional).
+#font: font for the text
 func setup(font: Font = null, button_template: Button = null) -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS     # works while the game is paused
+	process_mode = Node.PROCESS_MODE_ALWAYS     #works while the game is paused
 	layer = 100
-
 	var root := PanelContainer.new()
 	var style := StyleBoxFlat.new()
 	style.bg_color = Color("#3b363c")
@@ -57,25 +50,21 @@ func setup(font: Font = null, button_template: Button = null) -> void:
 	style.set_border_width_all(2)
 	root.add_theme_stylebox_override("panel", style)
 	add_child(root)
-	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)   # whole screen
-
+	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)   #whole screen
 	var margin := MarginContainer.new()
 	for side in ["margin_left", "margin_right", "margin_top", "margin_bottom"]:
 		margin.add_theme_constant_override(side, 16)
 	root.add_child(margin)
-
 	var column := VBoxContainer.new()
 	column.add_theme_constant_override("separation", 10)
 	margin.add_child(column)
-
-	# scrollable text area (takes all the space above the Back button)
+	#scrollable text area (takes all the space above the Back button)
 	_scroll = ScrollContainer.new()
 	_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_ALWAYS
 	column.add_child(_scroll)
 	_style_scrollbar(_scroll.get_v_scroll_bar())
-
 	var label := Label.new()
 	label.text = CONTROLS_TEXT
 	label.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
@@ -86,10 +75,9 @@ func setup(font: Font = null, button_template: Button = null) -> void:
 	if font:
 		label.add_theme_font_override("font", font)
 	_scroll.add_child(label)
-
-	# Back button, always visible at the bottom
+	#back button, always visible at the bottom
 	if button_template:
-		_back = button_template.duplicate(0) as Button   # 0 = copy the look only
+		_back = button_template.duplicate(0) as Button   #0 = copy the look only
 	else:
 		_back = Button.new()
 		if font:
@@ -99,9 +87,7 @@ func setup(font: Font = null, button_template: Button = null) -> void:
 	_back.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 	_back.pressed.connect(close)
 	column.add_child(_back)
-
 	hide()
-
 
 func _style_scrollbar(bar: VScrollBar) -> void:
 	bar.custom_minimum_size.x = 12
@@ -117,19 +103,15 @@ func _style_scrollbar(bar: VScrollBar) -> void:
 	bar.add_theme_stylebox_override("grabber_highlight", grab_hi)
 	bar.add_theme_stylebox_override("grabber_pressed", grab_hi)
 
-
 func open() -> void:
 	_scroll.scroll_vertical = 0
 	show()
-
-
 
 func close() -> void:
 	hide()
 	closed.emit()
 
-
-# arrow keys scroll the text (mouse wheel and dragging the bar work automatically)
+#arrow keys scroll the text (mouse wheel and dragging the bar work automatically)
 func _input(event: InputEvent) -> void:
 	if not visible:
 		return
@@ -139,7 +121,6 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_up", true):
 		_scroll.scroll_vertical -= SCROLL_STEP
 		get_viewport().set_input_as_handled()
-
 
 func _unhandled_input(event: InputEvent) -> void:
 	if visible and close_on_escape and event.is_action_pressed("ui_cancel"):
