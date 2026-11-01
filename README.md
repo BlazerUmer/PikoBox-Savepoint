@@ -5,7 +5,7 @@
 
 A small 2D pixel-art platformer made with **Godot 4**, built around one idea: you are a little guy, and your size changes what you can do.
 
-**Play it:** (https://mrblxze.itch.io/piko-box)
+**Play it:** ((https://mrblxze.itch.io/pikobox-svpt))
 
 <img width="1917" height="1075" alt="Screenshot 2026-10-26 013626" src="https://github.com/user-attachments/assets/9ef7590d-c5b6-420e-bf93-ec8240ea1bce" />
 
