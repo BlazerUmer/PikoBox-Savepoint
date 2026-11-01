@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://yfn2b25bmkdo"]
 
 [ext_resource type="Script" uid="uid://knaw2vxk83xl" path="res://scripts/pause_menu.gd" id="1_7l61g"]
-[ext_resource type="FontFile" uid="uid://dpnd0lrla7q1w" path="res://PixelifySans-Regular.ttf" id="2_1htdk"]
 [ext_resource type="FontFile" uid="uid://bciephe0so61g" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_5jxrj"]
 [ext_resource type="FontFile" uid="uid://r26svt2adh5l" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_fxs3t"]
 [ext_resource type="Script" uid="uid://b5br0u1qnm5ex" path="res://scene/try_again_button_3.gd" id="4_4iwa0"]
@@ -61,20 +60,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.1764706, 0.15294118, 0.1882353, 0.5882353)
-
-[node name="Label" type="Label" parent="ColorRect" unique_id=924052768]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 5.0
-offset_right = 218.0
-offset_bottom = 62.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_1htdk")
-theme_override_font_sizes/font_size = 5
-text = "Be Careful! Boxes will only 
-spawn when  player is in default size 
-aka 2 and will not spawn if something
- is blocking the players path."
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=315021705]
 anchors_preset = 15

@@ -32,6 +32,10 @@ window/snap/snap_2d_transforms_to_pixel=false
 window/canvas_textures/default_texture_filter=1
 window/root_node_layout_direction=0
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
 [input]
 
 left={

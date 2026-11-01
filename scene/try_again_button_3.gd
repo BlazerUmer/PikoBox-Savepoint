@@ -4,7 +4,6 @@ extends Button
 func _ready() -> void:
 	pressed.connect(_on_pressed)
 
-
 func _on_pressed() -> void:
 	var stats := get_node_or_null("/root/GameStats")
 	if stats == null:

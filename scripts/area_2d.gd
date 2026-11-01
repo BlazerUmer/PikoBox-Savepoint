@@ -4,10 +4,8 @@ extends Area2D
 
 var _triggered := false
 
-
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
-
 
 func _on_body_entered(body: Node2D) -> void:
 	if not (body is CharacterBody2D) or _triggered:
@@ -17,7 +15,7 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	_triggered = true
 
-	# Level number comes from the scene file name, e.g. level_2.tscn -> 2
+	#level number comes from the scene file name
 	var scene_file := get_tree().current_scene.scene_file_path
 	var n := scene_file.get_file().get_basename().trim_prefix("level_").to_int()
 	if n > 0:
@@ -27,6 +25,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 	var stats := get_node_or_null("/root/GameStats")
 	if stats:
-		stats.level_completed()     # freezes attempts + time for the completion screen
+		stats.level_completed()     
+	#freezes attempts + time for the completion screen
 
 	get_tree().change_scene_to_file.call_deferred(completion_scene_path)

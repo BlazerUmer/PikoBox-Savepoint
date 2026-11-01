@@ -1,5 +1,6 @@
 extends Node2D
 #tells game new attempt has started
+
 func _ready() -> void:
 	var stats := get_node_or_null("/root/GameStats")
 	if stats == null:

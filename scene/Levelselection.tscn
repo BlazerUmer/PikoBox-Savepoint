@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bciephe0so61g" path="res://fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="5_8t7pu"]
 [ext_resource type="FontFile" uid="uid://r26svt2adh5l" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="6_k6vq2"]
 [ext_resource type="Script" uid="uid://dmw4vx1jf0pu5" path="res://scripts/start_button.gd" id="7_8t7pu"]
+[ext_resource type="Script" uid="uid://dsunbfxr1lke6" path="res://scene/controls_button.gd" id="8_8t7pu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8i6m7"]
 texture = ExtResource("1_8i6m7")
@@ -294,6 +295,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2kq6j"]
+bg_color = Color(0.7781049, 0.5257843, 0.49079627, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sexo0"]
+bg_color = Color(0.24052352, 0.07385314, 0.09381833, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14gou"]
+bg_color = Color(0.5624707, 0.25677815, 0.30489513, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="level selection" type="Control" unique_id=1132368644]
 layout_mode = 3
 anchors_preset = 15
@@ -361,3 +383,27 @@ action_mode = 0
 text = "Back"
 script = ExtResource("7_8t7pu")
 target_scene = "uid://bk5cch3kwgcs6"
+
+[node name="controls" type="Button" parent="." unique_id=1167478299]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 62.0
+offset_right = -10.0
+offset_bottom = 82.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_pressed_color = Color(0.6133377, 0.32413095, 0.34738785, 1)
+theme_override_colors/font_hover_color = Color(0.61592436, 0.404461, 0.44026193, 1)
+theme_override_fonts/font = ExtResource("6_k6vq2")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_2kq6j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sexo0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_14gou")
+action_mode = 0
+text = "Controls"
+script = ExtResource("8_8t7pu")
