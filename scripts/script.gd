@@ -1,6 +1,6 @@
 extends CharacterBody2D
  
-# Speed per size: smaller = faster (8 px is the fastest).
+#speed per size: smaller = faster (8 px is the fastest).
 const SMALL_SIZE := 8
 const MEDIUM_SIZE := 24
 const LARGE_SIZE := 40

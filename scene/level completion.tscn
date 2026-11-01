@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bj4n3aj3po3p2" path="res://scripts/beat_level.gd" id="5_am605"]
 [ext_resource type="FontFile" uid="uid://r26svt2adh5l" path="res://fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="5_sybmk"]
 [ext_resource type="Script" uid="uid://dmw4vx1jf0pu5" path="res://scripts/start_button.gd" id="6_sclsb"]
+[ext_resource type="Script" uid="uid://suranikettx1" path="res://scripts/leaderboardcomp.gd" id="8_vd3bj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1yf3g"]
 texture = ExtResource("1_otdlm")
@@ -344,10 +345,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -57.0
-offset_right = 84.0
-offset_bottom = 6.0
+offset_left = -82.0
+offset_top = -46.0
+offset_right = 85.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.08701607, 0.08701607, 0.08701607, 1)
@@ -357,6 +358,12 @@ text = "
 "
 horizontal_alignment = 1
 script = ExtResource("5_am605")
+text_format = "Time: {time} 
+Score: {points}
+Best time: {best}
+Best score: {best_points}
+Attempts: {attempts}"
+font_size = 14
 
 [node name="level select button2" type="Button" parent="." unique_id=915400290]
 layout_mode = 1
@@ -366,9 +373,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -76.5
-offset_top = 14.0
+offset_top = 22.0
 offset_right = 76.5
-offset_bottom = 41.0
+offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_pressed_color = Color(0.6133377, 0.32413095, 0.34738785, 1)
@@ -391,9 +398,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -63.75
-offset_top = 49.0
+offset_top = 54.0
 offset_right = 63.75
-offset_bottom = 76.0
+offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_pressed_color = Color(0.6133377, 0.32413095, 0.34738785, 1)
@@ -407,3 +414,24 @@ action_mode = 0
 text = "Main Menu"
 script = ExtResource("6_sclsb")
 target_scene = "uid://bk5cch3kwgcs6"
+
+[node name="beat level2" type="Label" parent="." unique_id=23728312]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 226.0
+offset_top = 222.0
+offset_right = 393.0
+offset_bottom = 263.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.08701607, 0.08701607, 0.08701607, 1)
+theme_override_fonts/font = ExtResource("4_084gv")
+theme_override_font_sizes/font_size = 15
+text = "
+"
+horizontal_alignment = 1
+script = ExtResource("8_vd3bj")

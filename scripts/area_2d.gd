@@ -26,5 +26,5 @@ func _on_body_entered(body: Node2D) -> void:
 	#freezes attempts + time for the completion screen
 
 	get_tree().change_scene_to_file.call_deferred(completion_scene_path)
-	Progress.complete_level(n)      # unlocks the next level (use your autoload's actual name)
-	GameState.finish_level()        # saves points and best score
+	Progress.complete_level(n)      #unlocks the next level (use your autoload's actual name)
+	GameState.finish_level()        #saves points and best score
