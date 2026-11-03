@@ -7,7 +7,8 @@ A small 2D pixel-art platformer made with **Godot 4**, built around one idea: yo
 
 **Play it:** ((https://mrblxze.itch.io/pikobox-svpt))
 
-<img width="1917" height="1075" alt="Screenshot 2026-10-26 013626" src="https://github.com/user-attachments/assets/9ef7590d-c5b6-420e-bf93-ec8240ea1bce" />
+<img width="1917" height="1078" alt="Screenshot 2026-11-03 223423" src="https://github.com/user-attachments/assets/1ecd6f1f-586f-4645-82cf-2fe2e5db5cc3" />
+
 
 
 
