@@ -29,12 +29,12 @@ If you like this, go play the real thing: **Pico Park** by TECOPARK.
 |Action|Keys|
 |-|-|
 |Move|**A / D** or **← / →**|
-|Jump|**Space**|
+|Jump|**Space/W**|
 |Small size|**1**|
 |Medium size (default)|**2**|
 |Large size|**3**|
 |Place a box|**E**|
-|Pause|*esc*|
+|Pause|*esc/P*|
 
 ## Mechanics
 
