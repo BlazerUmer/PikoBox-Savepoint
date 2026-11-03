@@ -347,7 +347,7 @@ offset_top = 4.0
 offset_right = 234.0
 offset_bottom = 27.0
 theme_override_fonts/font = ExtResource("9_j5xbh")
-text = "Press esc for Pause menu and controls."
+text = "Press esc/p for Pause menu and controls."
 
 [node name="CharacterBody2D" parent="." unique_id=1169679479 instance=ExtResource("12_4knub")]
 position = Vector2(179, 734)
@@ -373,7 +373,7 @@ offset_right = 298.0
 offset_bottom = 631.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_j5xbh")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 16
 text = "    Press E to spawn boxes.
 Use boxes to reach the end.
 "
@@ -405,7 +405,7 @@ offset_right = 633.0
 offset_bottom = 761.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_j5xbh")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 16
 text = "Controls are in
  pause menu.
 "

@@ -356,7 +356,7 @@ offset_top = 4.0
 offset_right = 234.0
 offset_bottom = 27.0
 theme_override_fonts/font = ExtResource("12_tlh70")
-text = "Press esc for Pause menu and controls."
+text = "Press esc/p for Pause menu and controls."
 
 [node name="pause menu" parent="." unique_id=1263179102 instance=ExtResource("10_ri5j0")]
 visible = false

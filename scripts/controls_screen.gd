@@ -31,6 +31,8 @@ Points System:
 
 7- Leaderboards tab shows everyones best score.
 
+8- Max score for a level is 300.
+
 TIPS:
 
 1- The bigger the size, the higher the jump.
@@ -49,9 +51,12 @@ TIPS:
 
 5- Be mindful of box and resize limits!
 
+6- Only one login per device unless you clear your browser or app
+ data. You can rename yourself tho.
+
  Use boxes and Resizing to reach the end!!
 
-       Goodluck!!!"""
+	   Goodluck!!!"""
 
 const SCROLL_STEP := 24
 var font_size: int = 8

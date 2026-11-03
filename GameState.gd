@@ -2,11 +2,11 @@ extends Node
 
 #scoring(per level, max 300 by default):
 #collectible   100 points for grabbing the level's collectible (in the attempt you finish)
-#time bonus    up to 100. Full marks at or under the level's PAR time, fading to 0 at 3x par
+#time bonus    up to 100. Full marks at or under the level's PAR time, fading to 0 at par * SLOW_MULTIPLIER (4x right now)
 #attempt bonus up to 100. Full marks on the first attempt, minus 20 for each extra attempt
 #best score per level is saved to user://scores.cfg so it survives closing the game.
 
-signal stats_changed                      
+signal stats_changed
 signal level_finished(summary: Dictionary)
 
 const SAVE_PATH := "user://scores.cfg"    #separate from your progress autoload's progress.cfg on purpose
@@ -19,12 +19,15 @@ const SLOW_MULTIPLIER := 4.0          #time bonus reaches 0 at par * this
 #time where u get max points
 const DEFAULT_PAR_TIME := 30.0
 const PAR_TIMES := {
-	"level_1": 8.0,
+	"level_1": 6.0,
 	"level_2": 23.0,
 	"level_3": 20.0,
 	"level_4": 15.0,
 	"level_5": 25.0,
 }
+
+#the levels that count toward the total score (scene file names without ".tscn").
+const LEVEL_IDS := ["level_1", "level_2", "level_3", "level_4", "level_5"]
 
 var points: int = 0
 var collected: int = 0
@@ -63,8 +66,8 @@ func add_points(amount: int) -> void:
 	stats_changed.emit()
 
 #returns a summary you can show on a win screen:
-# { level, points, collectible_points, time_bonus, attempt_bonus, bonus, time, attempts,
-#   par_time, collected, total, all_collected, best_points, new_best }
+#{ level, points, collectible_points, time_bonus, attempt_bonus, bonus, time, attempts,
+#par_time, collected, total, all_collected, best_points, new_best }
 func finish_level() -> Dictionary:
 	if _finished:
 		return _last_summary                #reaching the flag twice doesn't count twice
@@ -114,6 +117,14 @@ func get_best_points(id: String = "") -> int:
 	if id == "":
 		id = level_id
 	return int(_cfg.get_value(id, "best_points", 0))
+
+#sum of your best score on every level. A better run on a level replaces that level's old best,
+#so the total only ever goes up. This is the number the online leaderboard will rank by.
+func get_total_score() -> int:
+	var total := 0
+	for id in LEVEL_IDS:
+		total += get_best_points(id)
+	return total
 
 func _par_time(id: String) -> float:
 	return float(PAR_TIMES.get(id, DEFAULT_PAR_TIME))

@@ -42,13 +42,13 @@ func _build_controls_screen() -> void:
 	add_child(controls_screen)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("pause"):
 		var tree := get_tree()
 		if tree == null:
 			return
 		if tree.paused:
 			if controls_screen.visible:
-				controls_screen.close()      #esc closes the controls screen first
+				controls_screen.close()  #P/Esc closes the controls screen first
 			else:
 				resume()
 		else:

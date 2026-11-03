@@ -365,7 +365,7 @@ offset_top = 4.0
 offset_right = 234.0
 offset_bottom = 27.0
 theme_override_fonts/font = ExtResource("9_vcnoq")
-text = "Press esc for Pause menu and controls."
+text = "Press esc/p for Pause menu and controls."
 
 [node name="Collectible2" parent="." unique_id=939729164 instance=ExtResource("13_y2se7")]
 position = Vector2(1494, 253)
