@@ -56,7 +56,7 @@ If you like this, go play the real thing: **Pico Park** by TECOPARK.
 2. Clone this repository:
 
 ```
-   git clone https://github.com/Blazerumer/PikoBox-JamGame.git
+   git clone https://github.com/Blazerumer/PikoBox-Savepoint.git
    ```
 
 3. Open Godot, click **Import**, and select the `project.godot` file.
