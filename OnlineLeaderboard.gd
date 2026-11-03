@@ -1,23 +1,23 @@
 extends Node
-#Talks to your Supabase leaderboard. Add as an Autoload named "OnlineLeaderboard":
-#Needs the PlayerProfile and GameState autoloads.
+# Talks to your Supabase leaderboard. Add as an Autoload named "OnlineLeaderboard":
+# Needs the PlayerProfile and GameState autoloads.
 #
-#every function below is async. Call it with await and you get a Dictionary back:
-#var result: Dictionary = await OnlineLeaderboard.fetch_top(10)
-#if result["ok"]: ... result["rows"] ...
+# every function below is async. Call it with await and you get a Dictionary back:
+# var result: Dictionary = await OnlineLeaderboard.fetch_top(10)
+# if result["ok"]: ... result["rows"] ...
 
 const SUPABASE_URL := "https://yacwvkfaswlfathvqzze.supabase.co"
-#The publishable key is meant to be public (it ships inside the web build).
-#NEVER put the secret / service_role key here.
+# The publishable key is meant to be public (it ships inside the web build).
+# NEVER put the secret / service_role key here.
 const SUPABASE_KEY := "sb_publishable_zToJr0Dv66_nxJHmb-820w_6-aMvEgC"
 const TIMEOUT_SECONDS := 10.0
 const OFFLINE_MESSAGE := "Offline mode. Leaderboard unavailable."
 
-var auto_submit: bool = true     #send your new total automatically every time you finish a level
+var auto_submit: bool = true     # send your new total automatically every time you finish a level
 
 
 func _ready() -> void:
-	_connect_signals.call_deferred()      #deferred so GameState exists even if it's listed below us
+	_connect_signals.call_deferred()      # deferred so GameState exists even if it's listed below us
 
 
 func _connect_signals() -> void:
@@ -26,7 +26,7 @@ func _connect_signals() -> void:
 		gs.level_finished.connect(_on_level_finished)
 
 
-#True when the player chose "Continue Offline" this session.
+# True when the player chose "Continue Offline" this session.
 func is_offline() -> bool:
 	var profile := get_node_or_null("/root/PlayerProfile")
 	return profile != null and "is_offline" in profile and profile.is_offline
@@ -37,11 +37,11 @@ func _on_level_finished(_summary: Dictionary) -> void:
 		return
 	var profile := get_node_or_null("/root/PlayerProfile")
 	if profile and profile.has_name():
-		submit_total_score()          #runs in the background; if it fails, the next submit catches up
+		submit_total_score()          # runs in the background; if it fails, the next submit catches up
 
 
-#Sends this player's total score. The server only keeps it if it's higher than their old one.
-#Returns { ok: bool, message: String }
+# Sends this player's total score. The server only keeps it if it's higher than their old one.
+# Returns { ok: bool, message: String }
 func submit_total_score() -> Dictionary:
 	if is_offline():
 		return {"ok": false, "message": OFFLINE_MESSAGE}
@@ -61,8 +61,8 @@ func submit_total_score() -> Dictionary:
 	return {"ok": res["ok"], "message": "" if res["ok"] else res["error"]}
 
 
-#The best players, highest first. Returns { ok, message, rows } where each row is
-#{ "name": String, "total_score": int }
+# The best players, highest first. Returns { ok, message, rows } where each row is
+# { "name": String, "total_score": int }
 func fetch_top(limit: int = 10) -> Dictionary:
 	if is_offline():
 		return {"ok": false, "message": OFFLINE_MESSAGE, "rows": []}
@@ -73,8 +73,9 @@ func fetch_top(limit: int = 10) -> Dictionary:
 		rows = res["data"]
 	return {"ok": res["ok"], "message": "" if res["ok"] else res["error"], "rows": rows}
 	
-#Is this name free for this player? Returns { ok, message, available }
-#If the check itself fails (no internet), available stays true so the login isn't blocked.
+
+# Is this name free for this player? Returns { ok, message, available }
+# If the check itself fails (no internet), available stays true so the login isn't blocked.
 func name_available(p_name: String) -> Dictionary:
 	var profile := get_node_or_null("/root/PlayerProfile")
 	if profile == null:
@@ -88,8 +89,8 @@ func name_available(p_name: String) -> Dictionary:
 	return {"ok": res["ok"], "message": "" if res["ok"] else res["error"], "available": free}
 
 
-#This player's place on the board (1 = best). rank is 0 if they aren't on the board yet.
-#Returns { ok, message, rank }
+# This player's place on the board (1 = best). rank is 0 if they aren't on the board yet.
+# Returns { ok, message, rank }
 func fetch_my_rank() -> Dictionary:
 	if is_offline():
 		return {"ok": false, "message": OFFLINE_MESSAGE, "rank": 0}
@@ -104,19 +105,22 @@ func fetch_my_rank() -> Dictionary:
 	return {"ok": res["ok"], "message": "" if res["ok"] else res["error"], "rank": rank}
 
 
-#one HTTP call to Supabase. Returns { ok, code, data, error }.
+# One HTTP call to Supabase. Returns { ok, code, data, error }.
 func _call_api(method: int, path: String, body: Variant = null) -> Dictionary:
-	#Safety net: nothing leaves the game in offline mode, whatever called us.
+	# Safety net: nothing leaves the game in offline mode, whatever called us.
 	if is_offline():
 		return {"ok": false, "code": 0, "data": null, "error": OFFLINE_MESSAGE}
 
 	var http := HTTPRequest.new()
+	# Disable double decompression for browser exports (prevents stream_peer_gzip errors)
+	http.accept_gzip = false
 	http.timeout = TIMEOUT_SECONDS
+	http.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(http)
 
-	#Per Supabase: the publishable key goes in the "apikey" header (not in Authorization: Bearer).
 	var headers := PackedStringArray([
 		"apikey: " + SUPABASE_KEY,
+		"Authorization: Bearer " + SUPABASE_KEY,
 		"Content-Type: application/json",
 		"Accept: application/json",
 	])
@@ -124,11 +128,13 @@ func _call_api(method: int, path: String, body: Variant = null) -> Dictionary:
 
 	var start_error: int = http.request(SUPABASE_URL + path, headers, method, payload)
 	if start_error != OK:
-		http.queue_free()
+		if is_instance_valid(http):
+			http.queue_free()
 		return {"ok": false, "code": 0, "data": null, "error": "Couldn't start the request (error %d)." % start_error}
 
 	var result: Array = await http.request_completed
-	http.queue_free()
+	if is_instance_valid(http):
+		http.queue_free()
 
 	var net_result: int = result[0]
 	var code: int = result[1]
