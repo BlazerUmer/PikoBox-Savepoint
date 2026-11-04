@@ -10,8 +10,8 @@ SPACE/W - jump
 1 - Size down
 2 - Default size (can spawn boxes)
 3 - Size up
-E - Place box (disabled in level 1)
-ESC - Pause menu
+E/R - Place box (disabled in level 1)
+ESC/P/T - Pause menu
 
 Points System:
 

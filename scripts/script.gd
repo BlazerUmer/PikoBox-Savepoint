@@ -236,6 +236,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			set_character_size(LARGE_SIZE)
 		elif event.keycode == KEY_E:
 			place_box()
+		elif event.keycode == KEY_R:
+			place_box()
 
 func set_character_size(new_size: int) -> void:
 	if new_size == current_size:
@@ -316,7 +318,6 @@ func _sweep_is_clear(from_center: Vector2, motion: Vector2, size_px: int) -> boo
 	return res[0] >= 1.0
 
 func _apply_size(px: int) -> void:
-
 	var s := float(px) / BASE_SIZE
 	collision.scale = Vector2(s, s)
 
