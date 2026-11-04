@@ -34,8 +34,8 @@ If you like this, go play the real thing: **Pico Park** by TECOPARK.
 |Small size|**1**|
 |Medium size (default)|**2**|
 |Large size|**3**|
-|Place a box|**E**|
-|Pause|*esc/P*|
+|Place a box|**E/R**|
+|Pause|*esc/P/R*|
 
 ## Mechanics
 
