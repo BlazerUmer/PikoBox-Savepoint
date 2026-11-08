@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://b00g0a45k1hx2" path="res://scripts/script.gd" id="1_qug0s"]
 [ext_resource type="Texture2D" uid="uid://b377v54d8283n" path="res://jame gam/New Piskel (2).png" id="2_qug0s"]
+[ext_resource type="AudioStream" uid="uid://bwepnu3vr7u3n" path="res://Sounds/retro_jump.wav" id="3_ogaei"]
+[ext_resource type="AudioStream" uid="uid://bbpsunx5chfdk" path="res://Sounds/resizeup.ogg" id="4_mjxbh"]
+[ext_resource type="AudioStream" uid="uid://hr6qol58h8ij" path="res://Sounds/resizedown.ogg" id="5_pykq2"]
+[ext_resource type="AudioStream" uid="uid://coi1vjo0eis8s" path="res://Sounds/soft_box_impact.ogg" id="6_7y57j"]
+[ext_resource type="AudioStream" uid="uid://d20oiotf1hapq" path="res://Sounds/pickupCoin.wav" id="7_ogaei"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qug0s"]
 radius = 4.0
@@ -22,3 +27,22 @@ texture = ExtResource("2_qug0s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=707354322]
 position = Vector2(10, -5)
 shape = SubResource("CapsuleShape2D_qug0s")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="." unique_id=1325423129]
+stream = ExtResource("3_ogaei")
+volume_db = -4.0
+
+[node name="ResizeDownSound" type="AudioStreamPlayer" parent="." unique_id=1469427778]
+stream = ExtResource("4_mjxbh")
+volume_db = -5.0
+
+[node name="ResizeUpSound" type="AudioStreamPlayer" parent="." unique_id=1147917604]
+stream = ExtResource("5_pykq2")
+volume_db = -5.0
+
+[node name="PlaceSound" type="AudioStreamPlayer" parent="." unique_id=925535454]
+stream = ExtResource("6_7y57j")
+volume_db = 1.0
+
+[node name="CollectSound" type="AudioStreamPlayer" parent="." unique_id=2113655156]
+stream = ExtResource("7_ogaei")

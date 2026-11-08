@@ -83,7 +83,7 @@ func _show_popup(font: Font) -> void:
 	label.text = "+%d" % points
 	label.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	label.z_index = 100
-	label.add_theme_font_size_override("font_size", 7)
+	label.add_theme_font_size_override("font_size", 24)
 	label.add_theme_color_override("font_color", popup_color)
 	label.add_theme_color_override("font_outline_color", Color.BLACK)
 	label.add_theme_constant_override("outline_size", 2)

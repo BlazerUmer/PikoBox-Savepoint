@@ -79,9 +79,17 @@ var facing: int = 1                        #left right logic
 var coyote_timer: float = 0.0
 var jump_buffer_timer: float = 0.0
 var held_boxes: Array = []                 #boxes we're standing on, frozen so we can't squash them
+var last_collected: int = 0                #used to detect when a collectible was picked up
 
 @onready var sprite: Sprite2D = $MainCharac
 @onready var collision: CollisionShape2D = $CollisionShape2D
+
+#sounds (add these AudioStreamPlayer nodes as children of the player)
+@onready var jump_sound: AudioStreamPlayer = $JumpSound
+@onready var place_sound: AudioStreamPlayer = $PlaceSound
+@onready var resize_up_sound: AudioStreamPlayer = $ResizeUpSound
+@onready var resize_down_sound: AudioStreamPlayer = $ResizeDownSound
+@onready var collect_sound: AudioStreamPlayer = $CollectSound
 
 
 func _ready() -> void:
@@ -107,6 +115,17 @@ func _connect_game_state() -> void:
 	var gs := _gs()
 	if gs and not gs.stats_changed.is_connected(_update_counter_hud):
 		gs.stats_changed.connect(_update_counter_hud)
+	if gs and not gs.stats_changed.is_connected(_check_collect_sound):
+		gs.stats_changed.connect(_check_collect_sound)
+
+#plays the collect sound whenever the collected count goes up
+func _check_collect_sound() -> void:
+	var gs := _gs()
+	if gs == null:
+		return
+	if gs.collected > last_collected:
+		collect_sound.play()
+	last_collected = gs.collected
 
 func _start_level() -> void:
 	var gs := _gs()
@@ -278,6 +297,12 @@ func set_character_size(new_size: int) -> void:
 	size_switches_used += 1
 	_update_counter_hud()
 	_flash_color(resize_color)
+
+	#resize sounds: up when growing, down when shrinking
+	if new_size > old_size:
+		resize_up_sound.play()
+	else:
+		resize_down_sound.play()
 
 func _find_free_offset(old_rect: Rect2, old_size: int) -> Vector2:
 	var base := position
@@ -485,6 +510,7 @@ func place_box() -> void:
 	get_parent().add_child(box)
 	box.global_position = pos
 	boxes_placed += 1
+	place_sound.play()
 	_update_counter_hud()
 	print("[box] placed at ", pos, " | size: ", box_size_px)
 
@@ -652,6 +678,7 @@ func _physics_process(delta: float) -> void:
 	#jump if a press is buffered AND we're on the ground or still inside the coyote window
 	if jump_buffer_timer > 0.0 and coyote_timer > 0.0:
 		velocity.y = _get_jump_velocity()
+		jump_sound.play()
 		jump_buffer_timer = 0.0
 		coyote_timer = 0.0     #no double jump
 

@@ -7,6 +7,8 @@ extends Area2D
 var activated: bool = false
 var platform_start_position: Vector2
 
+@onready var lever_sound: AudioStreamPlayer = $SwitchSound
+
 func _ready():
 	print("SWITCH READY")
 	$Sprite2D.hframes = 2
@@ -27,6 +29,7 @@ func _on_body_entered(body):
 		print("CHARACTERBODY2D DETECTED")
 		activated = true
 		$Sprite2D.frame = 1
+		lever_sound.play()
 		#start moving platform
 		move_platform()
 
@@ -39,7 +42,7 @@ func move_platform():
 	var distance = platform_start_position.distance_to(target_position)
 	var duration = distance / maxf(platform_speed, 1.0)
 	var tween = create_tween()
-	#rpeat forever
+	#repeat forever
 	tween.set_loops()
 	tween.tween_property(
 		moving_platform,

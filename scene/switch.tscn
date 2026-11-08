@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byr52x0wgqjsh" path="res://scripts/switch.gd" id="1_qbno6"]
 [ext_resource type="Texture2D" uid="uid://ukli3hpjepqm" path="res://jame gam/lever_spritesheet.png" id="2_dtkvk"]
+[ext_resource type="AudioStream" uid="uid://bdo455rdb8a6x" path="res://Sounds/switch.wav" id="3_dtkvk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ql73s"]
 radius = 10.049875
@@ -15,3 +16,6 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=97330832]
 shape = SubResource("CircleShape2D_ql73s")
+
+[node name="SwitchSound" type="AudioStreamPlayer" parent="." unique_id=1642792381]
+stream = ExtResource("3_dtkvk")

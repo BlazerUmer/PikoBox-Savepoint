@@ -169,7 +169,7 @@ normal = Vector2(0.009173926, -0.9999579)
 distance = -505.01544
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj4fy"]
-size = Vector2(388.7301, 12.52894)
+size = Vector2(294.45685, 33.259117)
 
 [node name="level2" type="Node2D" unique_id=426902847]
 script = ExtResource("1_uj4fy")
@@ -247,14 +247,14 @@ show_points = false
 show_collected = false
 
 [node name="tutorial text" type="Label" parent="." unique_id=831102170]
-offset_left = 54.0
-offset_top = 556.0
-offset_right = 298.0
-offset_bottom = 631.0
+offset_left = 46.0
+offset_top = 497.0
+offset_right = 370.0
+offset_bottom = 593.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_j5xbh")
-theme_override_font_sizes/font_size = 16
-text = "    Press E to spawn boxes.
+theme_override_font_sizes/font_size = 24
+text = "    Press E/R to spawn boxes.
 Use boxes to reach the end.
 "
 
@@ -275,7 +275,8 @@ script = ExtResource("8_im542")
 death_scene_path = "uid://cvpol1onn1qc8"
 
 [node name="fall death" type="CollisionShape2D" parent="Area2D3" unique_id=468545248]
-position = Vector2(1770.3939, 198.77216)
+position = Vector2(1699.38, 270.78632)
+rotation = 0.5717807
 shape = SubResource("RectangleShape2D_uj4fy")
 
 [node name="tutorial text2" type="Label" parent="." unique_id=1961218807]
